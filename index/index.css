@@ -1,0 +1,1661 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "BookkMyungjo-Bd";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "KOTRA_GOTHIC";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* --------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------- */
+body {
+  font-family: "KOTRA_GOTHIC";
+  width: 100%;
+  height: auto;
+  background-color: #FCF9EE;
+}
+
+/* header */
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.2s ease-in-out;
+}
+
+.rolling_ex {
+  width: 100%;
+  height: 40px;
+  background-color: #222222;
+  /* .rolling */
+}
+.rolling_ex .rolling {
+  width: 100%;
+  height: 40px;
+  background-color: #222222;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  /* .list */
+}
+.rolling_ex .rolling .list {
+  line-height: 40px;
+  display: flex;
+  /* li */
+}
+.rolling_ex .rolling .list li {
+  font-size: 14px;
+  padding-right: 20px;
+  width: 1000px;
+}
+.rolling_ex .rolling p {
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-weight: 900;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* rolling_ex */
+@keyframes flowRolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* 상단 flowrolling */
+.header_ex {
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-bottom: 1px solid #fff;
+  box-sizing: border-box;
+  /* header */
+}
+.header_ex .header {
+  width: 1300px;
+  height: 80px;
+  margin: 0 auto;
+  /* logo */
+  /* gnb */
+}
+.header_ex .header .logo {
+  float: left;
+  margin-left: 45px;
+  font-family: "Bookk Myungjo";
+  color: #fff;
+  margin-top: 10px;
+}
+.header_ex .header .logo :first-child {
+  font-size: 30px;
+}
+.header_ex .header .logo :last-child {
+  font-size: 12px;
+  text-align: center;
+}
+.header_ex .header .menu {
+  float: left;
+  margin-left: 45px;
+  font-family: "Bookk Myungjo";
+  color: white;
+  font-size: 20px;
+}
+.header_ex .header .menu .main_menu .item {
+  float: left;
+  margin-top: 38px;
+  height: 100px;
+  width: 100px;
+}
+.header_ex .header .menu .main_menu .item .item__contents {
+  width: 100%;
+  position: absolute;
+  padding-bottom: 10px;
+  margin-top: 16px;
+  display: none;
+  z-index: 9;
+  background-color: #FCF9EE;
+  left: 0;
+}
+.header_ex .header .menu .main_menu .item .item__contents .contents__menu {
+  background-color: #FCF9EE;
+  width: 800px;
+  height: 50px;
+  color: #222222;
+  position: relative;
+  margin: 0 auto;
+}
+.header_ex .header .menu .main_menu .item .item__contents .contents__menu .inner {
+  display: flex;
+  width: 100%;
+}
+.header_ex .header .menu .main_menu .item .item__contents .contents__menu .inner li {
+  float: left;
+  margin-right: 30px;
+  font-size: 14px;
+  line-height: 50px;
+}
+.header_ex .header .menu .main_menu .item .item__contents .submenu01 {
+  padding-left: 32px;
+}
+.header_ex .header .menu .main_menu .item .item__contents .submenu02 {
+  padding-left: 240px;
+}
+.header_ex .header .menu .main_menu .item .submenu03 {
+  padding-left: 220px;
+}
+.header_ex .header .menu .main_menu .item .submenu04 {
+  padding-left: 320px;
+}
+.header_ex .header .main_menu .item:hover .item__name {
+  color: #222222;
+  border-radius: 6px 6px 0 0;
+  display: inline-block;
+  position: relative;
+}
+.header_ex .header .main_menu .item .item__name::after {
+  content: "";
+  width: 0%;
+  left: 50%;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 1px;
+  border-bottom: 1px solid #222;
+  transition: all 0s ease;
+}
+.header_ex .header .main_menu .item:hover .item__name::after {
+  content: "";
+  width: 120%;
+  left: -5px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 3px;
+  border-bottom: 1px solid #222;
+  transition: all 0.3s ease;
+}
+.header_ex .header .main_menu .item:hover .item__contents {
+  display: block;
+}
+.header_ex .header .item__contents:hover {
+  display: block;
+}
+.header_ex .header .gnb {
+  float: right;
+  margin-right: 20px;
+  margin-top: 32px;
+}
+.header_ex .header .gnb .gi {
+  float: left;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin-right: 25px;
+}
+.header_ex .header .gnb .gi img {
+  width: 90%;
+}
+
+/* .header_ex */
+/* search */
+.search_ex {
+  width: 100%;
+  background-color: #FCF9EE;
+  position: absolute;
+  top: -400px;
+  z-index: 100;
+  transition: 0.5s;
+  /* //search */
+}
+.search_ex .search {
+  width: 1300px;
+  margin: 0px auto;
+  padding: 20px;
+  position: relative;
+  /* logo2 */
+  /* searching */
+  /* item */
+}
+.search_ex .search .logo2 {
+  margin-left: 45px;
+  font-family: "Bookk Myungjo";
+  color: #222222;
+  margin-top: 10px;
+  width: 1300px;
+  float: left;
+}
+.search_ex .search .logo2 :first-child {
+  font-size: 30px;
+  float: left;
+}
+.search_ex .search .logo2 :last-child {
+  font-size: 12px;
+  text-align: center;
+}
+.search_ex .search .searching {
+  position: relative;
+  width: 800px;
+  margin-bottom: 40px;
+  margin: 100px auto 50px;
+}
+.search_ex .search .searching input {
+  font-size: 25px;
+  color: #222222;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #9c9c9c;
+  position: relative;
+  background: none;
+  z-index: 101;
+}
+.search_ex .search .searching input:focus {
+  outline: none;
+}
+.search_ex .search .searching span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  width: 0;
+  height: 2px;
+  border-radius: 1px;
+  transition: 0.7s;
+}
+.search_ex .search .searching label {
+  position: absolute;
+  color: #707070;
+  font-size: 20px;
+  left: 10px;
+  bottom: 5px;
+  transition: all 0.3s;
+}
+.search_ex .search .searching i {
+  float: right;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #707070;
+  cursor: pointer;
+}
+.search_ex .search .searching input:focus ~ label,
+.search_ex .search .searching input:valid ~ label {
+  font-size: 15px;
+  background-origin: 20px;
+  color: #707070;
+  bottom: 40px;
+}
+.search_ex .search .searching input:focus ~ span,
+.search_ex .search .searching input:valid ~ span {
+  width: 100%;
+  background-color: #fff;
+  z-index: 102;
+}
+.search_ex .search .item {
+  width: 800px;
+  margin: 80px auto 80px;
+}
+.search_ex .search .item ul {
+  display: flex;
+  text-align: center;
+  line-height: 10px;
+}
+.search_ex .search .item ul li {
+  width: 130px;
+  height: 10px;
+  font-size: 12px;
+  display: inline-block;
+  padding: 10px;
+  margin: 0 10px 0;
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+}
+.search_ex .search .item ul li:hover {
+  background-color: #222;
+  color: white;
+  font-weight: bold;
+}
+.search_ex .search .exit {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* //search_ex */
+#bgvid {
+  z-index: -100;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* //bgi */
+/* section1 */
+.section1 {
+  width: 1300px;
+  height: 706px;
+  margin: 100px auto 160px;
+  /* tit1_1 */
+}
+.section1 p {
+  margin-left: 40px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: "Bookk Myungjo";
+}
+.section1 .tit1 {
+  width: 1300px;
+}
+.section1 .tit1 .tit1_1 {
+  width: 650px;
+  float: left;
+  height: 740px;
+}
+.section1 .tit1 .tit1_1 .swiper_whole {
+  width: 650px;
+  height: 650px;
+  margin: 0;
+  padding: 0;
+}
+.section1 .tit1 .tit1_1 .swiper_whole .gallery-top {
+  width: 650px;
+  height: 500px;
+  text-align: center;
+}
+.section1 .tit1 .tit1_1 .swiper_whole .gallery-top img {
+  width: 500px;
+}
+.section1 .tit1 .tit1_1 .swiper_whole .gallery-thumbs {
+  box-sizing: border-box;
+  width: 320px;
+  padding: 70px 0 0;
+}
+.section1 .tit1 .tit1_1 .swiper_whole .gallery-thumbs .swiper-slide img {
+  width: 80px;
+  height: 80px;
+}
+.section1 .tit1 .tit1_1 .swiper_whole .gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.section1 .tit1 .tit1_1 .swiper-button-prev:after, .section1 .tit1 .tit1_1 .swiper-rtl .swiper-button-next:after {
+  color: #d3d3d3;
+}
+.section1 .tit1 .tit1_1 .swiper-button-next:after {
+  color: #d3d3d3;
+}
+.section1 .tit1 .tit1_1 .swiper-free-mode > .swiper-wrapper {
+  margin: 0px auto 0;
+}
+.section1 .tit1 .tit1_2 {
+  width: 650px;
+  height: 650px;
+  float: left;
+}
+.section1 .tit1 .tit1_2 img {
+  width: 650px;
+}
+
+.swiper-container {
+  position: relative;
+  width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+.swiper-slide .info {
+  position: absolute;
+  margin-left: 75px;
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  opacity: 0.92;
+  border-radius: 250px;
+}
+.swiper-slide .info p:nth-child(1) {
+  margin-top: 150px;
+  font-size: 28px;
+  margin-left: 0;
+}
+.swiper-slide .info p:nth-child(2) {
+  font-size: 20px;
+  margin-left: 0;
+}
+.swiper-slide .info .preview {
+  text-align: center;
+  width: 250px;
+  height: 30px;
+  background-color: #222;
+  color: #FCF9EE;
+  margin-left: 125px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 100px;
+  font-family: "KOTRA_GOTHIC";
+  font-size: 16px;
+  line-height: 30px;
+}
+.swiper-slide .info .preview:hover {
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #222;
+  box-sizing: border-box;
+}
+
+.gallery-thumbs .swiper-slide {
+  opacity: 0.4;
+  height: auto;
+  width: 70px;
+  height: 70px;
+}
+
+.swiper-free-mode > .swiper-wrapper {
+  margin: 0px auto 0;
+}
+
+.info {
+  font-size: 23px;
+  color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+.swiper-slide:hover .info {
+  display: block;
+}
+
+.section1_pop {
+  border: 1px solid #dcdcdc;
+  position: fixed;
+  width: 860px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  display: none;
+  background: #fff;
+}
+.section1_pop ul {
+  width: 860px;
+}
+.section1_pop ul .preview_left {
+  width: 390px;
+  height: 500px;
+  float: left;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  border-right: 0.5px solid #e0e0e0;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.section1_pop ul .preview_left img {
+  margin-top: 10px;
+  width: 100%;
+}
+.section1_pop ul .preview_right {
+  width: 430px;
+  height: 460px;
+  float: left;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+.section1_pop ul .preview_right p {
+  margin-left: 0;
+}
+.section1_pop ul .preview_right p:nth-child(2) {
+  font-size: 14px;
+  font-family: "Bookk Myungjo";
+  margin-top: 50px;
+}
+.section1_pop ul .preview_right p:nth-child(3) {
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+.section1_pop ul .preview_right p:nth-child(4) {
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+.section1_pop ul .preview_right p:nth-child(5) {
+  font-size: 12px;
+  line-height: 23px;
+}
+.section1_pop ul .preview_right p:nth-child(6) {
+  margin-top: 20px;
+  font-size: 14px;
+  font-family: "Bookk Myungjo";
+  font-weight: 700;
+  margin-bottom: 70px;
+}
+.section1_pop ul .preview_right .addCart {
+  width: 300px;
+  height: 30px;
+  background-color: #222;
+  color: #FCF9EE;
+  margin: 0 auto;
+  line-height: 30px;
+  border-radius: 20px;
+  font-family: "Bookk Myungjo";
+  cursor: pointer;
+}
+.section1_pop ul .preview_right .addCart:hover {
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #222;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+/* preview_pop */
+.popup .close {
+  background: none;
+  border: 0;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* //section1 */
+.section2 {
+  width: 1300px;
+  height: 720px;
+  margin: 0 auto 160px;
+  overflow: hidden;
+}
+.section2 p {
+  margin-left: 40px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: "Bookk Myungjo";
+}
+.section2 .section2_content {
+  position: relative;
+  width: 1300px;
+  height: 650px;
+  /* .img */
+  /* section2_content */
+}
+.section2 .section2_content .img {
+  width: 1300px;
+  height: 650px;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+.section2 .section2_content .img img {
+  position: absolute;
+  top: 0;
+  width: 1300px;
+  height: 650px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+.section2 .section2_content .on {
+  display: block;
+}
+.section2 .section2_content .txt {
+  width: 324px;
+  height: 650px;
+  position: relative;
+  z-index: 2;
+  float: left;
+  color: #FCF9EE;
+  text-align: right;
+  line-height: 20px;
+  right: 20px;
+}
+.section2 .section2_content .txt p:nth-child(1) {
+  font-size: 30px;
+  margin-top: 520px;
+}
+.section2 .section2_content .txt p:nth-child(2) {
+  font-size: 25px;
+}
+.section2 .section2_content .txt01 {
+  text-align: center;
+  left: -15px;
+  padding-top: 0px;
+}
+.section2 .section2_content .txt01 p:nth-child(1) {
+  font-size: 35px;
+  margin-top: 300px;
+}
+.section2 .section2_content .txt01 p:nth-child(2) {
+  font-size: 30px;
+}
+.section2 .section2_content .txt01 span {
+  position: absolute;
+  top: 570px;
+  left: 50px;
+}
+.section2 .section2_content .txt01 img {
+  width: 50px;
+  filter: invert(100);
+  position: absolute;
+  top: 574px;
+  left: 135px;
+}
+.section2 .section2_content .black_box {
+  position: absolute;
+  width: 1300px;
+  height: 650px;
+  z-index: 1;
+}
+.section2 .section2_content .black_box li {
+  width: 324px;
+  height: 650px;
+  float: left;
+  background-color: #222;
+  opacity: 0.7;
+  border-right: solid 1px rgba(255, 255, 255, 0.3);
+}
+.section2 .section2_content .black_box li:last-child {
+  border-right: none;
+}
+.section2 .section2_content .black_box .hidden {
+  opacity: 0;
+}
+
+/* //section2 */
+.section3 {
+  width: 1300px;
+  height: 660px;
+  margin: 0 auto;
+  /* sec3_left */
+  /* sec3_right */
+  /* preview_pop */
+}
+.section3 .sec3_tit {
+  margin-left: 40px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: "Bookk Myungjo";
+}
+.section3 .sec3_left {
+  width: 530px;
+  height: 600px;
+  float: left;
+}
+.section3 .sec3_left img {
+  width: 530px;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section3 .sec3_right {
+  width: 770px;
+  height: 600px;
+  float: left;
+  /* ul */
+}
+.section3 .sec3_right ul {
+  width: 770px;
+  height: 290px;
+  /* li */
+}
+.section3 .sec3_right ul li {
+  position: relative;
+  float: left;
+  width: 243px;
+  height: 290px;
+  background-color: #fff;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.section3 .sec3_right ul li .bestimg {
+  margin: 30px 30px 15px 30px;
+  width: 184px;
+  height: 184px;
+}
+.section3 .sec3_right ul li .bestimg img {
+  width: 184px;
+  height: 184px;
+  transition: 0.4s;
+}
+.section3 .sec3_right ul li:nth-child(3) {
+  margin-right: 0;
+}
+.section3 .sec3_right ul li p {
+  font-size: 14px;
+  font-family: "Bookk Myungjo";
+  margin-left: 0;
+}
+.section3 .sec3_right ul li .preview {
+  width: 180px;
+  height: 30px;
+  position: absolute;
+  bottom: 22px;
+  left: 31.5px;
+  background-color: #222;
+  color: #FCF9EE;
+  line-height: 30px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  display: none;
+}
+.section3 .sec3_right ul li .preview:hover {
+  color: #222;
+  background-color: #fff;
+  border: 1px solid #222;
+  box-sizing: border-box;
+}
+.section3 .sec3_right ul li:hover p {
+  display: none;
+}
+.section3 .sec3_right ul li:hover .preview {
+  display: block;
+}
+.section3 .sec3_right ul li:hover img {
+  transform: scale(1.04);
+  filter: drop-shadow(5px 3px 8px rgba(146, 146, 146, 0.57));
+}
+.section3 .preview_pop {
+  border: 1px solid #dcdcdc;
+  position: fixed;
+  width: 860px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  display: none;
+  background: #fff;
+}
+.section3 .preview_pop ul {
+  width: 860px;
+}
+.section3 .preview_pop ul .preview_left {
+  width: 390px;
+  height: 500px;
+  float: left;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  border-right: 0.5px solid #e0e0e0;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.section3 .preview_pop ul .preview_left img {
+  margin-top: 10px;
+  width: 100%;
+}
+.section3 .preview_pop ul .preview_right {
+  width: 430px;
+  height: 460px;
+  float: left;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+.section3 .preview_pop ul .preview_right p:nth-child(2) {
+  font-size: 14px;
+  font-family: "Bookk Myungjo";
+  margin-top: 50px;
+}
+.section3 .preview_pop ul .preview_right p:nth-child(3) {
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+.section3 .preview_pop ul .preview_right p:nth-child(4) {
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+.section3 .preview_pop ul .preview_right p:nth-child(5) {
+  font-size: 12px;
+  line-height: 23px;
+}
+.section3 .preview_pop ul .preview_right p:nth-child(6) {
+  margin-top: 20px;
+  font-size: 14px;
+  font-family: "Bookk Myungjo";
+  font-weight: 700;
+  margin-bottom: 70px;
+}
+.section3 .preview_pop ul .preview_right .addCart {
+  width: 300px;
+  height: 30px;
+  background-color: #222;
+  color: #FCF9EE;
+  margin: 0 auto;
+  line-height: 30px;
+  border-radius: 20px;
+  font-family: "Bookk Myungjo";
+  cursor: pointer;
+}
+.section3 .preview_pop ul .preview_right .addCart:hover {
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #222;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+.section3 .popup .close {
+  background: none;
+  border: 0;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* section3 */
+.section4 {
+  width: 1300px;
+  /* height: 600px; */
+  margin: 20px auto 200px;
+  position: relative;
+  overflow: hidden;
+  /* sec4_1 */
+  /* question */
+  /* result */
+}
+.section4 .sec4_1 {
+  width: 1300px;
+  height: 300px;
+}
+.section4 .sec4_1 img {
+  width: 100%;
+}
+.section4 .sec4_1 .sec4_1_txt {
+  position: absolute;
+  top: 80px;
+  /* left: 430px; */
+  left: 380px;
+  text-align: center;
+}
+.section4 .sec4_1 .sec4_1_txt p {
+  font-size: 40px;
+  /* font-family: $english; */
+  margin-bottom: 50px;
+  color: #fff;
+}
+.section4 .sec4_1 .sec4_1_txt .start_btn {
+  width: 330px;
+  height: 65px;
+  background-color: rgba(255, 255, 255, 0.6980392157);
+  position: absolute;
+  /* right: 62px; */
+  right: 120px;
+  font-family: "Bookk Myungjo";
+  font-size: 22px;
+  line-height: 60px;
+  box-shadow: 4px 4px 4px 2px rgba(163, 163, 163, 0.452);
+  transition: 0.3s;
+}
+.section4 .sec4_1 .sec4_1_txt .start_btn:hover {
+  background-color: rgba(34, 34, 34, 0.8352941176);
+  color: #fff;
+  font-size: 25px;
+}
+.section4 .qusetion {
+  width: 1300px;
+  height: 600px;
+  margin: 0 auto 200px;
+  position: absolute;
+  background-image: url(../team_images/main/test_bg01.jpg);
+  background-size: cover;
+  top: -600px;
+  transition: 0.5s;
+}
+.section4 .qusetion p {
+  font-size: 25px;
+  text-align: center;
+  margin: 45px 0 90px;
+}
+.section4 .qusetion ul {
+  margin: 0 200px;
+  /* li */
+}
+.section4 .qusetion ul li {
+  float: left;
+  width: 350px;
+  margin-right: 200px;
+  text-align: center;
+  /* anw_img */
+}
+.section4 .qusetion ul li:last-child {
+  margin-right: 0;
+}
+.section4 .qusetion ul li .anw_img {
+  width: 350px;
+  height: 220px;
+  margin-bottom: 35px;
+}
+.section4 .qusetion ul li .anw_img img {
+  width: 350px;
+  height: 220px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section4 .qusetion ul li .anw_txt {
+  width: 310px;
+  height: 50px;
+  background-color: #fff;
+  margin: 0 auto;
+  line-height: 50px;
+  font-size: 18px;
+  /* border-radius: 20px; */
+}
+.section4 .qusetion ul li .anw_txt:hover {
+  background-color: #222;
+  color: #FCF9EE;
+  font-weight: bold;
+}
+.section4 .result {
+  width: 1300px;
+  height: 600px;
+  margin: 0 auto 160px;
+  position: absolute;
+  background-image: url(../team_images/main/wood_bg.jpeg);
+  background-size: cover;
+  top: -600px;
+  transition: 0.5s;
+  /* p */
+}
+.section4 .result p {
+  font-size: 25px;
+  text-align: center;
+  margin: 80px 0 65px;
+  color: #FCF9EE;
+}
+.section4 .result p span {
+  font-weight: bold;
+  font-size: 26px;
+}
+.section4 .result ul {
+  width: 970px;
+  margin: 0 165px;
+}
+.section4 .result ul li {
+  float: left;
+  width: 310px;
+  height: 315px;
+  background-color: #FCF9EE;
+  /* opacity: 0.8; */
+  margin-right: 20px;
+  border-radius: 30px;
+  /* div */
+}
+.section4 .result ul li:last-child {
+  margin-right: 0;
+}
+.section4 .result ul li div {
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  margin: 0 30px;
+}
+.section4 .result ul li div img {
+  width: 93%;
+}
+.section4 .result ul li p {
+  font-family: "Bookk Myungjo";
+  font-size: 16px;
+  color: #222;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.section4 .result ul li:hover img {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+/* section4 */
+.section5 {
+  width: 1300px;
+  height: 600px;
+  margin: 0 auto 170px;
+  position: relative;
+  /* sec5 */
+  /* quick_bar */
+}
+.section5 .sec5 {
+  display: none;
+  width: 1300px;
+  height: 600px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  /* ul */
+}
+.section5 .sec5 img {
+  width: 1300px;
+  z-index: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.section5 .sec5 .sec5_tit {
+  position: absolute;
+  top: 50px;
+  left: 540px;
+  font-size: 24px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.568627451);
+  display: inline-block;
+  padding: 10px;
+}
+.section5 .sec5 .tit05_2 {
+  left: 490px;
+}
+.section5 .sec5 .tit05_3 {
+  left: 480px;
+}
+.section5 .sec5 .tit05_4 {
+  left: 490px;
+}
+.section5 .sec5 .tit05_5 {
+  left: 520px;
+}
+.section5 .sec5 ul {
+  position: absolute;
+  top: 146px;
+  left: 310px;
+  /* li */
+}
+.section5 .sec5 ul li {
+  float: left;
+  width: 260px;
+  height: 335px;
+  background-color: #fff;
+  opacity: 0.9;
+  margin-right: 20px;
+  text-align: center;
+}
+.section5 .sec5 ul li:hover .card {
+  transform: rotateY(180deg);
+}
+.section5 .sec5 ul li:last-child {
+  margin-right: 0;
+}
+.section5 .sec5 ul li .card {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+}
+.section5 .sec5 ul li .front, .section5 .sec5 ul li .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+.section5 .sec5 ul li .front {
+  z-index: 10;
+}
+.section5 .sec5 ul li .back {
+  transform: rotateY(180deg);
+  z-index: 5;
+}
+.section5 .sec5 ul li .back img {
+  /*  margin-right: 20px; */
+  margin-top: 0;
+  width: 150px;
+  height: 150px;
+}
+.section5 .sec5 ul li .back p {
+  font-size: 12px;
+}
+.section5 .sec5 ul li .back p:nth-child(3) {
+  margin-top: 10px;
+  font-size: 13px;
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+}
+.section5 .sec5 ul li .back div {
+  background-color: #222;
+  color: #fff;
+  margin: 0 auto;
+  cursor: pointer;
+  width: 200px;
+  height: 20px;
+  border-radius: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  margin-top: 20px;
+  font-family: "Bookk Myungjo";
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+.section5 .sec5 ul li .back div:hover {
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #222;
+}
+.section5 .sec5 ul li div {
+  width: 260px;
+  height: 260px;
+}
+.section5 .sec5 ul li div img {
+  width: 230px;
+  height: 230px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-top: 10px;
+}
+.section5 .sec5 ul li p {
+  font-size: 14px;
+  font-family: "Bookk Myungjo";
+  line-height: 20px;
+}
+.section5 .block {
+  display: block;
+}
+.section5 .quick_bar {
+  position: absolute;
+  top: -30px;
+  z-index: 2;
+  width: 130px;
+  height: 660px;
+}
+.section5 .quick_bar ul {
+  width: 130px;
+  height: 615px;
+  margin: 0px 90px;
+  background-color: #222222;
+  padding-top: 45px;
+}
+.section5 .quick_bar ul li {
+  width: 90px;
+  height: 90px;
+  background-color: #FCF9EE;
+  margin: 0 20px 30px 20px;
+  text-align: center;
+  cursor: pointer;
+  /* border-radius: 20px; */
+}
+.section5 .quick_bar ul li p {
+  line-height: 20px;
+}
+.section5 .quick_bar ul li p:first-child {
+  font-size: 13px;
+  padding-top: 25px;
+}
+.section5 .quick_bar ul .quick_bar ul li:first-child {
+  margin-top: 20px;
+}
+.section5 .quick_bar ul .click {
+  border: 3px solid #ffffff;
+  box-sizing: border-box;
+  background-color: #222;
+  color: #FCF9EE;
+  /* border-radius: 20px; */
+}
+
+/* section5 */
+/* section6 */
+.section6 {
+  width: 1200px;
+  height: 323px;
+  margin: 0 auto 200px;
+  position: relative;
+  overflow: hidden;
+  /* //sns_swiper */
+  /* popup */
+}
+.section6 .sec6_tit {
+  margin-left: 40px;
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-family: "Bookk Myungjo";
+}
+.section6 .swiper {
+  position: absolute;
+  width: 1200px;
+  height: 350px;
+  margin: 0 auto;
+}
+.section6 .swiper-slide {
+  width: 270px;
+  height: 270px;
+  margin-right: 15px;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  cursor: url(../team_images/main/gnb_search.png), auto;
+}
+.section6 .swiper-slide .cart {
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
+}
+.section6 .swiper-slide .cart img {
+  width: 25px;
+  height: 25px;
+  margin-left: 1px;
+  transition: 0.3s;
+}
+.section6 .swiper-slide .sns_info {
+  position: absolute;
+  bottom: -70px;
+  font-size: 13px;
+  width: 270px;
+  height: 60px;
+  background-color: #fff;
+  color: #222;
+  opacity: 0.85;
+  padding-top: 10px;
+  border-radius: 60px 60px 0 0;
+  transition: 0.3s;
+}
+.section6 .swiper-slide:hover .sns_info {
+  bottom: -20px;
+}
+.section6 .swiper-slide:hover .cart {
+  border: 2px solid #FCF9EE;
+}
+.section6 .swiper-slide:hover .cart img {
+  filter: invert(100%);
+}
+.section6 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section6 .swiper-button-next {
+  right: 0px;
+  width: 80px;
+  height: 270px;
+  background-color: #fff;
+  opacity: 0.8;
+  top: 22px;
+  color: #222;
+}
+.section6 .swiper-button-prev {
+  left: 0px;
+  width: 80px;
+  height: 270px;
+  background-color: #fff;
+  opacity: 0.8;
+  top: 22px;
+  color: #222;
+}
+.section6 .sns_pop {
+  display: none;
+}
+.section6 .popup {
+  width: 860px;
+  height: 720px;
+  border: 1px solid #dcdcdc;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  background: #fff;
+  /* close */
+  /* pop_left */
+  /* pop_right */
+}
+.section6 .popup .close {
+  background: none;
+  border: 0;
+  position: absolute;
+  cursor: pointer;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+}
+.section6 .popup .pop_left {
+  width: 540px;
+  height: 720px;
+  float: left;
+}
+.section6 .popup .pop_left img {
+  width: 500px;
+  height: 500px;
+  margin: 20px;
+  margin-bottom: -8px;
+}
+.section6 .popup .pop_left .pop_txt {
+  width: 520px;
+  height: 180px;
+  top: -5px;
+  background-color: #F8F8F8;
+  padding: 10px;
+  font-size: 14px;
+}
+.section6 .popup .pop_left .pop_txt .pop_txt_01 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.section6 .popup .pop_left .pop_txt .pop_txt_02 {
+  margin-bottom: 10px;
+}
+.section6 .popup .pop_left .pop_txt .enter {
+  height: 5px;
+}
+.section6 .popup .pop_right {
+  width: 320px;
+  height: 720px;
+  float: left;
+  text-align: center;
+  border-left: 3px solid #F8F8F8;
+  box-sizing: border-box;
+}
+.section6 .popup .pop_right img {
+  width: 220px;
+  height: 220px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.section6 .popup .pop_right div {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto 20px;
+  font-size: 20px;
+  line-height: 50px;
+  font-family: "Bookk Myungjo";
+  cursor: pointer;
+}
+.section6 .popup .pop_right .btn1 {
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #222;
+  box-sizing: border-box;
+}
+.section6 .popup .pop_right .btn1:hover {
+  box-shadow: 4px 4px 4px 2px rgba(163, 163, 163, 0.452);
+}
+.section6 .popup .pop_right .btn2 {
+  background-color: #222;
+  color: #fff;
+}
+.section6 .popup .pop_right .btn2:hover {
+  box-shadow: 4px 4px 4px 2px rgba(163, 163, 163, 0.452);
+}
+.section6 .shadow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.52);
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+}
+
+/* //section6 */
+/* footer */
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: #444;
+  margin: 0 auto;
+  padding: 25px 0;
+  position: relative;
+}
+footer .footer_in {
+  width: 1300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 2px solid #FCF9EE;
+  box-sizing: border-box;
+  padding-left: 115px;
+  padding-top: 35px;
+  /* footer_left */
+  /* footer_right */
+}
+footer .footer_in .footer_left {
+  width: 850px;
+  height: 300px;
+  float: left;
+  font-size: 12px;
+  color: #FCF9EE;
+}
+footer .footer_in .footer_left ul {
+  width: 785px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+footer .footer_in .footer_left p {
+  margin-top: 40px;
+}
+footer .footer_in .footer_left p span {
+  margin-left: 30px;
+  border-bottom: 1px solid #FCF9EE;
+}
+footer .footer_in .footer_left span {
+  margin-right: 30px;
+  line-height: 25px;
+}
+footer .footer_in .footer_left .info_search {
+  color: white;
+  position: absolute;
+  height: 20px;
+  font-size: 12px;
+  border-bottom: 1px solid #FCF9EE;
+}
+footer .footer_in .footer_right {
+  width: 320px;
+  height: 300px;
+  float: left;
+  position: relative;
+  /* footer_logo */
+}
+footer .footer_in .footer_right .footer_logo {
+  width: 130px;
+  height: 60px;
+  top: 40px;
+  border: 1px solid #FCF9EE;
+  box-sizing: border-box;
+  text-align: center;
+}
+footer .footer_in .footer_right .footer_logo li {
+  margin: 0;
+  width: 130px;
+}
+footer .footer_in .footer_right .footer_logo li p {
+  font-family: "Bookk Myungjo";
+}
+footer .footer_in .footer_right .footer_logo li p:first-child {
+  text-align: center;
+  font-size: 13px;
+}
+footer .footer_in .footer_right .footer_logo li:first-child {
+  height: 40px;
+  border-bottom: 1px solid #FCF9EE;
+  box-sizing: border-box;
+}
+footer .footer_in .footer_right .footer_logo li:first-child p {
+  color: #FCF9EE;
+}
+footer .footer_in .footer_right .footer_logo li:first-child p:first-child {
+  font-size: 13px;
+  margin-top: 5px;
+}
+footer .footer_in .footer_right .footer_logo li:first-child p:last-child {
+  font-size: 11px;
+}
+footer .footer_in .footer_right .footer_logo li:last-child {
+  height: 20px;
+}
+footer .footer_in .footer_right .footer_logo li:last-child p {
+  font-size: 9px;
+  font-family: "KOTRA_GOTHIC";
+  color: #FCF9EE;
+  margin-top: 2px;
+}
+footer .footer_in .footer_right span {
+  font-size: 10px;
+  color: #FCF9EE;
+  position: absolute;
+  left: 37px;
+  top: 65px;
+}
+footer .footer_in .footer_right .sns_logo {
+  width: 140px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 150px;
+  left: -8px;
+}
+footer .footer_in .footer_right .sns_logo img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 드롭다운 메뉴 */
+.footer_in ul {
+  width: 590px;
+}
+.footer_in ul li {
+  float: left;
+  margin-right: 35px;
+}
+.footer_in ul li span {
+  color: white;
+  padding: 6px 0;
+  font-size: 12px;
+  position: relative;
+  display: block;
+  border-bottom: 1px solid #FCF9EE;
+  height: 14px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown .dropbtn {
+  color: white;
+  padding: 10px;
+  font-size: 12px;
+}
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-size: 12px;
+  border: 1px solid #FCF9EE;
+  box-sizing: border-box;
+  background-color: #444;
+  top: 30px;
+}
+
+.dropdown-content a {
+  color: #FCF9EE;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+}
+
+.dropdown-content a:hover {
+  background-color: #666;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* //footer */
+.top_btn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  right: 20px;
+  bottom: 50px;
+  cursor: pointer;
+  opacity: 0;
+}
+.top_btn img {
+  width: 100%;
+  transition: 0.3s;
+  filter: invert(100%);
+}
+.top_btn img:hover {
+  filter: invert(0%);
+}
+
+/* top_Btn *//*# sourceMappingURL=index.css.map */

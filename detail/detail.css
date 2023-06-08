@@ -1,0 +1,1301 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a:link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "BookkMyungjo-Bd";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "KOTRA_GOTHIC";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* --------------------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------- */
+body {
+  font-family: "KOTRA_GOTHIC";
+  width: 100%;
+  height: auto;
+  background-color: #FCF9EE;
+}
+
+/* header */
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.2s ease-in-out;
+}
+
+.rolling_ex {
+  width: 100%;
+  height: 40px;
+  background-color: #222222;
+  /* .rolling */
+}
+.rolling_ex .rolling {
+  width: 100%;
+  height: 40px;
+  background-color: #222222;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  /* .list */
+}
+.rolling_ex .rolling .list {
+  line-height: 40px;
+  display: flex;
+  /* li */
+}
+.rolling_ex .rolling .list li {
+  font-size: 14px;
+  padding-right: 20px;
+  width: 1000px;
+}
+.rolling_ex .rolling p {
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-weight: 900;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* rolling_ex */
+@keyframes flowRolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* 상단 flowrolling */
+.header_ex {
+  width: 100%;
+  height: auto;
+  position: relative;
+  border-bottom: 1px solid #fff;
+  box-sizing: border-box;
+  /* header */
+}
+.header_ex .header {
+  width: 1300px;
+  height: 80px;
+  margin: 0 auto;
+  /* logo */
+  /* gnb */
+}
+.header_ex .header .logo {
+  float: left;
+  margin-left: 45px;
+  font-family: "Bookk Myungjo";
+  color: #222;
+  margin-top: 10px;
+}
+.header_ex .header .logo :first-child {
+  font-size: 30px;
+}
+.header_ex .header .logo :last-child {
+  font-size: 12px;
+  text-align: center;
+}
+.header_ex .header .menu {
+  float: left;
+  margin-left: 45px;
+  font-family: "Bookk Myungjo";
+  color: #222;
+  font-size: 20px;
+}
+.header_ex .header .menu .main_menu .item {
+  float: left;
+  margin-top: 38px;
+  height: 100px;
+  width: 100px;
+}
+.header_ex .header .menu .main_menu .item .item__contents {
+  width: 100%;
+  position: absolute;
+  padding-bottom: 10px;
+  margin-top: 16px;
+  display: none;
+  z-index: 9;
+  background-color: #FCF9EE;
+  left: 0;
+}
+.header_ex .header .menu .main_menu .item .item__contents .contents__menu {
+  background-color: #FCF9EE;
+  width: 800px;
+  height: 50px;
+  color: #222222;
+  position: relative;
+  margin: 0 auto;
+}
+.header_ex .header .menu .main_menu .item .item__contents .contents__menu .inner {
+  display: flex;
+  width: 100%;
+}
+.header_ex .header .menu .main_menu .item .item__contents .contents__menu .inner li {
+  float: left;
+  margin-right: 30px;
+  font-size: 14px;
+  line-height: 50px;
+}
+.header_ex .header .menu .main_menu .item .item__contents .submenu01 {
+  padding-left: 32px;
+}
+.header_ex .header .menu .main_menu .item .item__contents .submenu02 {
+  padding-left: 240px;
+}
+.header_ex .header .menu .main_menu .item .submenu03 {
+  padding-left: 220px;
+}
+.header_ex .header .menu .main_menu .item .submenu04 {
+  padding-left: 320px;
+}
+.header_ex .header .main_menu .item:hover .item__name {
+  color: #222222;
+  border-radius: 6px 6px 0 0;
+  display: inline-block;
+  position: relative;
+}
+.header_ex .header .main_menu .item .item__name::after {
+  content: "";
+  width: 0%;
+  left: 50%;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 1px;
+  border-bottom: 1px solid #222;
+  transition: all 0s ease;
+}
+.header_ex .header .main_menu .item:hover .item__name::after {
+  content: "";
+  width: 120%;
+  left: -5px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  margin-top: 3px;
+  border-bottom: 1px solid #222;
+  transition: all 0.3s ease;
+}
+.header_ex .header .main_menu .item:hover .item__contents {
+  display: block;
+}
+.header_ex .header .item__contents:hover {
+  display: block;
+}
+.header_ex .header .gnb {
+  float: right;
+  margin-right: 20px;
+  margin-top: 32px;
+}
+.header_ex .header .gnb .gi {
+  float: left;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin-right: 25px;
+}
+.header_ex .header .gnb .gi img {
+  width: 90%;
+  filter: invert(100%);
+}
+
+/* .header_ex */
+/* search */
+.search_ex {
+  width: 100%;
+  background-color: #FCF9EE;
+  position: absolute;
+  top: -400px;
+  z-index: 100;
+  transition: 0.5s;
+  /* //search */
+}
+.search_ex .search {
+  width: 1300px;
+  margin: 0px auto;
+  padding: 20px;
+  position: relative;
+  /* logo2 */
+  /* searching */
+  /* item */
+}
+.search_ex .search .logo2 {
+  margin-left: 45px;
+  font-family: "Bookk Myungjo";
+  color: #222222;
+  margin-top: 10px;
+  width: 1300px;
+  float: left;
+}
+.search_ex .search .logo2 :first-child {
+  font-size: 30px;
+  float: left;
+}
+.search_ex .search .logo2 :last-child {
+  font-size: 12px;
+  text-align: center;
+}
+.search_ex .search .searching {
+  position: relative;
+  width: 800px;
+  margin-bottom: 40px;
+  margin: 100px auto 50px;
+}
+.search_ex .search .searching input {
+  font-size: 25px;
+  color: #222222;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #9c9c9c;
+  position: relative;
+  background: none;
+  z-index: 101;
+}
+.search_ex .search .searching input:focus {
+  outline: none;
+}
+.search_ex .search .searching span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  width: 0;
+  height: 2px;
+  border-radius: 1px;
+  transition: 0.7s;
+}
+.search_ex .search .searching label {
+  position: absolute;
+  color: #707070;
+  font-size: 20px;
+  left: 10px;
+  bottom: 5px;
+  transition: all 0.3s;
+}
+.search_ex .search .searching i {
+  float: right;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #707070;
+  cursor: pointer;
+}
+.search_ex .search .searching input:focus ~ label,
+.search_ex .search .searching input:valid ~ label {
+  font-size: 15px;
+  background-origin: 20px;
+  color: #707070;
+  bottom: 40px;
+}
+.search_ex .search .searching input:focus ~ span,
+.search_ex .search .searching input:valid ~ span {
+  width: 100%;
+  background-color: #fff;
+  z-index: 102;
+}
+.search_ex .search .item {
+  width: 800px;
+  margin: 80px auto 80px;
+}
+.search_ex .search .item ul {
+  display: flex;
+  text-align: center;
+  line-height: 10px;
+}
+.search_ex .search .item ul li {
+  width: 130px;
+  height: 10px;
+  font-size: 12px;
+  display: inline-block;
+  padding: 10px;
+  margin: 0 10px 0;
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+}
+.search_ex .search .item ul li:hover {
+  background-color: #222;
+  color: #222;
+  font-weight: bold;
+}
+.search_ex .search .exit {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* //search_ex */
+.wrap {
+  width: 1300px;
+  margin: 0 auto;
+  /* path */
+  /* item_left */
+  /* item_right */
+}
+.wrap .path {
+  font-family: "Bookk Myungjo";
+  font-size: 14px;
+  margin-left: 70px;
+  margin-top: 180px;
+  margin-bottom: 10px;
+  color: black;
+}
+.wrap .item {
+  width: 1235px;
+  height: 620px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.wrap .item .item_left {
+  float: left;
+  width: 750px;
+  height: 620px;
+}
+.wrap .item .item_left .swiper_whole {
+  width: 710px;
+  height: 650px;
+  margin: 0;
+  padding: 20px;
+}
+.wrap .item .item_left .swiper_whole .gallery-top {
+  width: 450px;
+  height: 450px;
+  text-align: center;
+  margin: 0 auto;
+}
+.wrap .item .item_left .swiper_whole .gallery-top img {
+  width: 450px;
+  height: 450px;
+}
+.wrap .item .item_left .swiper_whole .gallery-thumbs {
+  box-sizing: border-box;
+  width: 700px;
+  height: 150px;
+  margin: 0 auto;
+}
+.wrap .item .item_left .swiper_whole .gallery-thumbs .swiper-slide {
+  width: 100px;
+}
+.wrap .item .item_left .swiper_whole .gallery-thumbs .swiper-slide img {
+  width: 130px;
+  height: 130px;
+}
+.wrap .item .item_left .swiper_whole .gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.wrap .item .item_left .swiper-button-prev:after, .wrap .item .item_left .swiper-rtl .swiper-button-next:after {
+  color: #d3d3d3;
+}
+.wrap .item .item_left .swiper-button-next:after {
+  color: #d3d3d3;
+}
+.wrap .item .item_left .swiper-free-mode > .swiper-wrapper {
+  margin: 0px auto 0;
+}
+.wrap .swiper-container {
+  position: relative;
+  width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.wrap .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+.wrap .gallery-thumbs .swiper-slide {
+  opacity: 0.9;
+  height: auto;
+  width: 70px;
+  height: 70px;
+}
+.wrap .swiper-free-mode > .swiper-wrapper {
+  margin: 0px auto 0;
+}
+.wrap .item_right {
+  float: left;
+  width: 440px;
+  height: 620px;
+  margin-right: 45px;
+  /* item_txt */
+  /* select*/
+  /* select */
+}
+.wrap .item_right .item_txt {
+  margin-top: 80px;
+  text-align: center;
+  font-family: "Bookk Myungjo";
+}
+.wrap .item_right .item_txt p {
+  font-size: 16px;
+}
+.wrap .item_right .item_txt p:nth-child(1) {
+  font-weight: 700;
+  margin-bottom: 35px;
+  font-family: "Bookk Myungjo";
+}
+.wrap .item_right .item_txt p:nth-child(2) {
+  margin-bottom: 35px;
+  font-family: "Bookk Myungjo";
+}
+.wrap .item_right .item_txt p:nth-child(3) {
+  margin-bottom: 20px;
+}
+.wrap .item_right .item_txt p:nth-child(4) {
+  margin-bottom: 35px;
+}
+.wrap .item_right .item_txt p:nth-child(5) {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+.wrap .item_right .item_txt p:nth-child(6) {
+  font-size: 12px;
+  line-height: 20px;
+}
+.wrap .item_right .select {
+  position: relative;
+  box-sizing: border-box;
+  z-index: 3;
+  margin: 50px 20px 0 0;
+  width: 400px;
+  height: 30px;
+  border-bottom: 1px solid #bebebe;
+  background: url("https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png") calc(100% - 7px) center no-repeat;
+  background-size: 20px;
+  cursor: pointer;
+  float: right;
+}
+.wrap .item_right .select .label {
+  position: absolute;
+  width: 400px;
+  font-family: "Bookk Myungjo";
+  height: inherit;
+  border: 0 none;
+  outline: 0 none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 12px;
+}
+.wrap .item_right .select i {
+  position: absolute;
+  margin-left: 70px;
+  right: 10px;
+  bottom: 5px;
+}
+.wrap .item_right .select .optionList {
+  position: absolute;
+  font-size: 12px;
+  top: 28px;
+  left: 0;
+  width: 100%;
+  color: #222;
+  list-style-type: none;
+  padding: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.3s ease-in;
+  font-family: "Bookk Myungjo";
+  background-color: #fff;
+}
+.wrap .item_right .select.active .optionList {
+  max-height: 500px;
+}
+.wrap .item_right .select .optionItem {
+  padding: 10px 15px 10px;
+  transition: 0.1s;
+}
+.wrap .item_right .select .optionItem:hover {
+  background-color: #dddddd;
+  color: #fff;
+}
+.wrap .item_right .btn {
+  width: 400px;
+  height: 45px;
+  margin: 130px auto 0;
+  font-family: "Bookk Myungjo";
+}
+.wrap .item_right .btn div {
+  width: 190px;
+  height: 45px;
+  float: left;
+  line-height: 45px;
+  text-align: center;
+  cursor: pointer;
+}
+.wrap .item_right .btn div:nth-child(1) {
+  margin-right: 20px;
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+}
+.wrap .item_right .btn div:nth-child(2) {
+  background-color: #222;
+  color: #fff;
+}
+
+/* wrap */
+.cart_in {
+  position: absolute;
+  top: -900px;
+  width: 1235px;
+  height: 900px;
+  margin: 0 auto;
+  z-index: 10;
+  margin-left: 33px;
+  transition: 0.5s;
+  /* ul */
+}
+.cart_in ul {
+  height: 900px;
+  /* cart_right */
+}
+.cart_in ul .cart_left {
+  float: left;
+  width: 705px;
+  height: 900px;
+  background: rgba(255, 255, 255, 0.699);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+}
+.cart_in ul .cart_right {
+  float: left;
+  height: 900px;
+  width: 530px;
+  position: relative;
+  background-color: #fff;
+  /* cartInner */
+}
+.cart_in ul .cart_right .cartInner {
+  width: 500px;
+  height: 870px;
+  margin: 15px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  text-align: center;
+  /* ul */
+  /* count */
+  /* total */
+  /* add */
+}
+.cart_in ul .cart_right .cartInner .close {
+  position: absolute;
+  font-size: 35px;
+  right: 25px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cart_in ul .cart_right .cartInner .alert {
+  margin-top: 300px;
+  opacity: 0;
+}
+.cart_in ul .cart_right .cartInner ul {
+  width: 330px;
+  height: 180px;
+  margin: 100px auto 0;
+}
+.cart_in ul .cart_right .cartInner ul li {
+  float: left;
+}
+.cart_in ul .cart_right .cartInner ul li:nth-child(1) {
+  width: 110px;
+  height: 180px;
+}
+.cart_in ul .cart_right .cartInner ul li:nth-child(1) img {
+  width: 110px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cart_in ul .cart_right .cartInner ul li:nth-child(2) {
+  width: 200px;
+  height: 180px;
+  margin-left: 10px;
+}
+.cart_in ul .cart_right .cartInner ul li:nth-child(2) p {
+  font-family: "Bookk Myungjo";
+}
+.cart_in ul .cart_right .cartInner ul li:nth-child(2) p:nth-child(1) {
+  margin-top: 25px;
+}
+.cart_in ul .cart_right .cartInner #count {
+  float: left;
+  display: flex;
+  width: 100px;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 90px;
+}
+.cart_in ul .cart_right .cartInner #count input {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 1px solid #999;
+  color: #222;
+}
+.cart_in ul .cart_right .cartInner .total {
+  float: right;
+  margin-right: 150px;
+  font-family: "Bookk Myungjo";
+}
+.cart_in ul .cart_right .cartInner span {
+  position: absolute;
+  right: 140px;
+}
+.cart_in ul .cart_right .cartInner .add {
+  width: 330px;
+  height: 45px;
+  background-color: #222;
+  color: #fff;
+  cursor: pointer;
+  margin: 80px auto 10px;
+  line-height: 45px;
+  transition: 0.3s;
+}
+.cart_in ul .cart_right .cartInner .add:hover {
+  font-weight: bold;
+}
+.cart_in ul .cart_right .cartInner .buy {
+  width: 330px;
+  height: 45px;
+  background-color: #fff;
+  color: black;
+  border: 1px solid #d3d3d3;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 0px auto 10px;
+  line-height: 45px;
+}
+.cart_in ul .cart_right .cartInner .buy:hover {
+  font-weight: bold;
+}
+
+/* cart_in */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  margin: 0 auto;
+  width: 1080px;
+  list-style: none;
+  /* li */
+}
+.accordion li .button {
+  position: relative;
+  display: block;
+  padding: 20px;
+  width: 100%;
+  color: #000;
+  text-align: left;
+  border: 0;
+  cursor: pointer;
+  border-top: 1px solid #222;
+  box-sizing: border-box;
+  background-color: #FCF9EE;
+  padding: 40px 30px;
+  font-family: "KOTRA_GOTHIC";
+  font-size: 16px;
+}
+.accordion li .plus {
+  display: block;
+  float: right;
+}
+.accordion li .minus {
+  display: none;
+  float: right;
+}
+.accordion li .content {
+  display: none;
+  margin: 0;
+}
+.accordion li.on .button {
+  font-weight: bold;
+}
+.accordion li.on .plus {
+  display: none;
+}
+.accordion li.on .minus {
+  display: block;
+}
+.accordion li.on .content {
+  display: block;
+}
+
+/* accordion */
+.accordion #menu1 {
+  width: 1080px;
+  height: 480px;
+  margin: 0 auto;
+  /* li */
+}
+.accordion #menu1 li {
+  float: left;
+  width: 340px;
+  height: 345px;
+  margin-right: 30px;
+  text-align: center;
+  /* img */
+}
+.accordion #menu1 li:last-child {
+  margin-right: 0;
+}
+.accordion #menu1 li .img {
+  width: 340px;
+  height: 260px;
+  background-color: #fff;
+}
+.accordion #menu1 li .img img {
+  width: 60%;
+  margin-top: 20px;
+}
+.accordion #menu1 li .tit {
+  margin-top: 10px;
+  background-color: #fff;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+}
+.accordion #menu1 li .txt {
+  margin-top: 10px;
+  background-color: #fff;
+  height: 95px;
+  font-size: 12px;
+}
+.accordion #menu1 li .txt01 p {
+  padding-top: 15px;
+}
+.accordion #menu1 li .txt02 p {
+  padding-top: 30px;
+}
+.accordion #menu1 li .txt03 p {
+  padding-top: 30px;
+}
+
+/* menu1 */
+.accordion #menu2 {
+  font-family: "Bookk Myungjo";
+  margin-left: 25px;
+  margin-bottom: 40px;
+  line-height: 30px;
+} /* menu2 */
+.accordion #menu4 {
+  margin: 0px auto 100px;
+  width: 1080px;
+  height: 420px;
+}
+.accordion #menu4 li {
+  padding: 20px;
+  float: left;
+  width: 215px;
+  height: 420px;
+  margin-right: 20px;
+  text-align: center;
+  background-color: #fff;
+  /* rec_img */
+}
+.accordion #menu4 li:last-child {
+  margin-right: 0;
+}
+.accordion #menu4 li .rec_img {
+  width: 210px;
+  height: 225px;
+  margin-bottom: 10px;
+}
+.accordion #menu4 li .rec_img img {
+  width: 100%;
+}
+.accordion #menu4 li p:nth-child(1) {
+  padding-top: 20px;
+  font-weight: 700;
+}
+.accordion #menu4 li p:nth-child(2) {
+  margin-top: 20px;
+  font-family: "Bookk Myungjo";
+}
+.accordion #menu4 li p:nth-child(3) {
+  margin-top: 20px;
+}
+.accordion #menu4 li p:nth-child(4) {
+  margin-top: 30px;
+}
+
+/* menu4 */
+.accordion #menu5 {
+  margin: 0px auto 100px;
+  width: 1080px;
+  height: 700px;
+  font-family: "Bookk Myungjo";
+}
+.accordion #menu5 p {
+  margin: 10px;
+  font-size: 20px;
+  font-family: "Bookk Myungjo";
+  font-weight: bold;
+}
+.accordion #menu5 .sub5 {
+  width: 1070px;
+  height: 250px;
+  overflow: scroll;
+  line-height: 30px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+.accordion #menu5 .sub5_1 {
+  height: 90px;
+  overflow: hidden;
+  padding-left: 10px;
+  line-height: 30px;
+}
+
+/* menu5 */
+/* footer */
+footer {
+  width: 100%;
+  height: 300px;
+  background-color: #444;
+  margin: 0 auto;
+  padding: 25px 0;
+  position: relative;
+  margin-top: 200px;
+}
+footer .footer_in {
+  width: 1300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 2px solid #FCF9EE;
+  box-sizing: border-box;
+  padding-left: 115px;
+  padding-top: 35px;
+  /* footer_left */
+  /* footer_right */
+}
+footer .footer_in .footer_left {
+  width: 850px;
+  height: 290px;
+  float: left;
+  font-size: 12px;
+  color: #FCF9EE;
+}
+footer .footer_in .footer_left ul {
+  width: 785px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+footer .footer_in .footer_left p {
+  margin-top: 40px;
+}
+footer .footer_in .footer_left p span {
+  margin-left: 30px;
+  border-bottom: 1px solid #FCF9EE;
+}
+footer .footer_in .footer_left span {
+  margin-right: 30px;
+  line-height: 25px;
+}
+footer .footer_in .footer_left .info_search {
+  color: white;
+  position: absolute;
+  height: 20px;
+  font-size: 12px;
+  border-bottom: 1px solid #FCF9EE;
+}
+footer .footer_in .footer_right {
+  width: 320px;
+  height: 290px;
+  float: left;
+  position: relative;
+  /* footer_logo */
+}
+footer .footer_in .footer_right .footer_logo {
+  width: 130px;
+  height: 60px;
+  top: 40px;
+  border: 1px solid #FCF9EE;
+  box-sizing: border-box;
+  text-align: center;
+}
+footer .footer_in .footer_right .footer_logo li {
+  margin: 0;
+  width: 130px;
+}
+footer .footer_in .footer_right .footer_logo li p {
+  font-family: "Bookk Myungjo";
+}
+footer .footer_in .footer_right .footer_logo li p:first-child {
+  text-align: center;
+  font-size: 13px;
+}
+footer .footer_in .footer_right .footer_logo li:first-child {
+  height: 40px;
+  border-bottom: 1px solid #FCF9EE;
+  box-sizing: border-box;
+}
+footer .footer_in .footer_right .footer_logo li:first-child p {
+  color: #FCF9EE;
+}
+footer .footer_in .footer_right .footer_logo li:first-child p:first-child {
+  font-size: 13px;
+  margin-top: 5px;
+}
+footer .footer_in .footer_right .footer_logo li:first-child p:last-child {
+  font-size: 11px;
+}
+footer .footer_in .footer_right .footer_logo li:last-child {
+  height: 20px;
+}
+footer .footer_in .footer_right .footer_logo li:last-child p {
+  font-size: 9px;
+  font-family: "KOTRA_GOTHIC";
+  color: #FCF9EE;
+  margin-top: 2px;
+}
+footer .footer_in .footer_right span {
+  font-size: 10px;
+  color: #FCF9EE;
+  position: absolute;
+  left: 37px;
+  top: 65px;
+}
+footer .footer_in .footer_right .sns_logo {
+  width: 140px;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 150px;
+  left: -8px;
+}
+footer .footer_in .footer_right .sns_logo img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 드롭다운 메뉴 */
+.footer_in ul {
+  width: 590px;
+}
+.footer_in ul li {
+  float: left;
+  margin-right: 35px;
+  position: relative;
+}
+.footer_in ul li span {
+  color: white;
+  padding: 6px 0;
+  font-size: 12px;
+  position: relative;
+  display: block;
+  border-bottom: 1px solid #FCF9EE;
+  height: 14px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown .dropbtn {
+  color: white;
+  padding: 10px;
+  font-size: 12px;
+}
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-size: 12px;
+  border: 1px solid #FCF9EE;
+  box-sizing: border-box;
+  background-color: #444;
+  top: 30px;
+}
+
+.dropdown-content a {
+  color: #FCF9EE;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+}
+
+.dropdown-content a:hover {
+  background-color: #666;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* //footer */
+.top_btn {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  right: 20px;
+  bottom: 50px;
+  cursor: pointer;
+  opacity: 0;
+}
+.top_btn img {
+  width: 100%;
+  transition: 0.3s;
+  filter: invert(100%);
+}
+.top_btn img:hover {
+  filter: invert(0%);
+}
+
+/* top_Btn */
+/* review_swiper */
+.accordion #menu3 {
+  position: relative;
+  padding-bottom: 50px;
+}
+.accordion #menu3 .review {
+  width: 90px;
+  height: 150px;
+  float: left;
+  margin-right: 25px;
+  /* li */
+}
+.accordion #menu3 .review li {
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #bebebe;
+  box-sizing: border-box;
+  /* review_img */
+}
+.accordion #menu3 .review li:nth-child(1) {
+  width: 90px;
+  height: 80px;
+  padding-top: 10px;
+  font-size: 12px;
+  line-height: 25px;
+}
+.accordion #menu3 .review li:nth-child(2) {
+  width: 90px;
+  height: 60px;
+  margin-top: 10px;
+  line-height: 60px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.accordion #menu3 .review li:nth-child(2):hover {
+  background-color: #222;
+  color: #fff;
+}
+.accordion #menu3 .review li .review_img .swiper {
+  float: right;
+  width: 960px;
+  height: 150px;
+  margin-right: 0;
+  margin-bottom: 100px;
+  position: relative;
+}
+.accordion #menu3 .review li .review_img .swiper .swiper-slide {
+  width: 185px;
+  height: 150px;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* review */
+.review_txt {
+  width: 1080px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-size: 12px;
+  padding-left: 8px;
+  /* display: flex; */
+}
+.review_txt .txt_box {
+  width: 200px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 16px;
+  background-color: #fff;
+  float: left;
+  margin-bottom: 20px;
+  /*     &:last-child{
+        margin-right: 0;
+      } */
+}
+.review_txt .txt_box .review_box01, .review_txt .txt_box .review_box02, .review_txt .txt_box .review_box03 {
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 12px;
+  border-bottom: 2px solid #FCF9EE;
+  box-sizing: border-box;
+}
+.review_txt .txt_box .review_box04 {
+  width: 200px;
+  height: 80px;
+  font-size: 12px;
+  padding-top: 20px;
+}
+
+/* review_txt */
+.s2 {
+  display: block;
+  width: 190px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.review_img .swiper-button-prev {
+  color: #c1c1c1;
+  width: 50px;
+  height: 152px;
+  background-color: #fff;
+  top: 20px;
+  left: 0;
+  opacity: 0.8;
+}
+
+.review_img .swiper-button-next {
+  color: #c1c1c1;
+  width: 50px;
+  height: 152px;
+  background-color: #fff;
+  top: 20px;
+  right: 0;
+  opacity: 0.8;
+}
+
+/* review적을때 버튼 관련 */
+.delete {
+  opacity: 0.5;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.delete:hover {
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* 포토리뷰 입력 폼 */
+.review_form {
+  width: 900px;
+  margin: 50px auto 0;
+  position: relative;
+  display: none;
+  /* textRev */
+  /* add_btn */
+}
+.review_form .textRev {
+  width: 785px;
+  height: 98px;
+  padding-left: 15px;
+}
+.review_form .filebox {
+  margin-top: 10px;
+}
+.review_form .add_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90px;
+  height: 100px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* review_form */
+/* 포토리뷰 동적 댓글 */
+.photo_review {
+  width: 1080px;
+  margin: 0 auto;
+  padding-left: 8px;
+}
+.photo_review .txt_box {
+  width: 180px;
+  height: 110px;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  margin-right: 16px;
+  background-color: #fff;
+  float: left;
+  margin-bottom: 20px;
+  position: relative;
+  padding-top: 140px;
+  word-wrap: break-word;
+}
+.photo_review .txt_box .img_box {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  top: 0;
+  padding-left: 40px;
+  max-width: 110px;
+  min-height: 110px;
+}
+.photo_review .txt_box .img_box #preview {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.photo_review .txt_box .date_box {
+  width: 180px;
+  height: 30px;
+  position: absolute;
+  top: 120px;
+}/*# sourceMappingURL=detail.css.map */
