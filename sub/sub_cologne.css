@@ -870,5 +870,18 @@ footer .footer_in .footer_right .sns_logo img {
 /* pagination */
 .pagination-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  width: 150px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.pagination-container .prev-button, .pagination-container .next-button {
+  font-size: 15px;
+  margin-top: 3px;
+}
+.pagination-container .number-button {
+  font-size: 20px;
+}
+.pagination-container .number-button:nth-child(1) {
+  margin-right: 15px;
 }/*# sourceMappingURL=sub_cologne.css.map */
