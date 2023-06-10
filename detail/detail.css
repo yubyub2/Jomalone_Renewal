@@ -1160,17 +1160,29 @@ footer .footer_in .footer_right .sns_logo img {
 }
 .review_txt .txt_box {
   width: 200px;
+  height: 260px;
   text-align: center;
   font-size: 12px;
   margin-right: 16px;
   background-color: #fff;
   float: left;
   margin-bottom: 20px;
-  /*     &:last-child{
-        margin-right: 0;
-      } */
+  position: relative;
 }
-.review_txt .txt_box .review_box01, .review_txt .txt_box .review_box02, .review_txt .txt_box .review_box03 {
+.review_txt .txt_box .review_box01 {
+  width: 110px;
+  height: 110px;
+  padding-left: 45px;
+  max-width: 110px;
+  min-height: 110px;
+}
+.review_txt .txt_box .review_box01 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.review_txt .txt_box .review_box02, .review_txt .txt_box .review_box03 {
   width: 200px;
   height: 50px;
   line-height: 50px;
@@ -1266,7 +1278,7 @@ footer .footer_in .footer_right .sns_logo img {
 }
 .photo_review .txt_box {
   width: 180px;
-  height: 110px;
+  height: 80px;
   padding: 10px;
   text-align: center;
   font-size: 12px;
@@ -1275,7 +1287,7 @@ footer .footer_in .footer_right .sns_logo img {
   float: left;
   margin-bottom: 20px;
   position: relative;
-  padding-top: 140px;
+  padding-top: 170px;
   word-wrap: break-word;
 }
 .photo_review .txt_box .img_box {
@@ -1298,4 +1310,6 @@ footer .footer_in .footer_right .sns_logo img {
   height: 30px;
   position: absolute;
   top: 120px;
+  border-bottom: 1px solid #FCF9EE;
+  line-height: 25px;
 }/*# sourceMappingURL=detail.css.map */
