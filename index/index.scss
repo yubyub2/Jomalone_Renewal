@@ -1037,6 +1037,27 @@ header{
           
         }
       }
+      .retBtn{
+        width: 140px;
+        height: 45px;
+        position: absolute;
+        right: 0;
+        bottom: 7px;
+        line-height: 32px;
+        color: #fff;
+        transition: 0.3s;
+        &:hover{
+          font-weight: 800;
+          font-size: 18px;
+          cursor: pointer;
+        }
+        img{
+          width: 25%;
+          float: left;
+          margin-right: 10px;
+          filter: invert(1);
+        }
+      }
     }/* result */
 
 

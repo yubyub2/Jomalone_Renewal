@@ -360,7 +360,7 @@ header {
 }
 .search_ex .search .item ul li:hover {
   background-color: #222;
-  color: #222;
+  color: #ffffff;
   font-weight: bold;
 }
 .search_ex .search .exit {

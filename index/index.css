@@ -1067,6 +1067,27 @@ header {
   transform: scale(1.05);
   transition: 0.3s;
 }
+.section4 .result .retBtn {
+  width: 140px;
+  height: 45px;
+  position: absolute;
+  right: 0;
+  bottom: 7px;
+  line-height: 32px;
+  color: #fff;
+  transition: 0.3s;
+}
+.section4 .result .retBtn:hover {
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+}
+.section4 .result .retBtn img {
+  width: 25%;
+  float: left;
+  margin-right: 10px;
+  filter: invert(1);
+}
 
 /* section4 */
 .section5 {

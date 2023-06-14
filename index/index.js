@@ -125,6 +125,11 @@ $(function(){
   $('.anw3').on('click', function(){
     $('.result').css('top', '0')
   })
+  $('.retBtn').on('click', function(){
+    $('.section4').css('height', '300px')
+    $('.qusetion').css('top', '-600px')
+    $('.result').css('top', '-600px')
+  })
 })
 /* //section4 */
 

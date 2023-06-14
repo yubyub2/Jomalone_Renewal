@@ -1,10 +1,9 @@
 $(window).on('load', function () {
   setFlowBanner();  
 })
-
 function setFlowBanner(){
-  const wrap = ('.rolling');
-  const list = ('.rolling .list');
+  const wrap = $('.rolling');
+  const list = $('.rolling .list');
   let wrapWidth = wrap.width();
   let listWidth = list.width();
   const speed = 70; //1초에 몇픽셀 이동하는지 설정
@@ -20,8 +19,8 @@ function setFlowBanner(){
       if (listWidth < wrapWidth) {
           const listCount = Math.ceil(wrapWidth * 2 / listWidth);
           for (let i = 2; i < listCount; i++) {
-              clone = clone.clone();
-              $rap.append(clone);
+              $clone = $clone.clone();
+              $wrap.append($clone);
           }
       }
       wrap.find('.list').css({ 'animation': `${listWidth / speed}s linear infinite flowRolling` }); 
@@ -29,8 +28,9 @@ function setFlowBanner(){
 
   $('.banner_exit').on("click", function(){
     $('.rolling_ex').css('display','none');
-  });}
-/* rolling_banner */
+  });
+}
+/* //rolling_banner */
 
   /* search */
   $(function(){
